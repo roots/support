@@ -95,3 +95,19 @@ function add_actions(iterable $actions, $callback, $priority = 10, $args = 2)
 {
     add_filters($actions, $callback, $priority, $args);
 }
+
+/**
+ * Helper function for prettying up errors
+ *
+ * @param string $message
+ * @param string $subtitle
+ * @param string $title
+ * @param string $footer
+ */
+function wp_die($message, $subtitle = '', $title = '', $footer = '')
+{
+    $title = $title ?: __('WordPress &rsaquo; Error', 'roots');
+    $footer = $footer ?: '<a href="https://discourse.roots.io/">Roots Discourse</a>';
+    $message = "<h1>{$title}<br><small>{$subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
+    \wp_die($message, $title);
+}
