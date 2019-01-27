@@ -82,6 +82,21 @@ function add_filters(iterable $filters, $callback, $priority = 10, $args = 2)
 }
 
 /**
+ * Remove single callback to multiple filters
+ *
+ * @param  iterable $filters  List of filters
+ * @param  callable $callback
+ * @param  integer  $priority
+ * @return void
+ */
+function remove_filters($filters, $callback, $priority = 10)
+{
+    foreach ((array)$filters as $filter) {
+        remove_filter($filter, $callback, $priority);
+    }
+}
+
+/**
  * Alias of add_filters
  *
  * @see add_filters
