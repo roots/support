@@ -104,7 +104,7 @@ function remove_filters(iterable $filters, $callback, $priority = 10)
  * Alias of add_filters
  *
  * @see add_filters
- * @param  iterable $filters  List of filters
+ * @param  iterable $actions  List of actions
  * @param  callable $callback
  * @param  integer  $priority
  * @return void
