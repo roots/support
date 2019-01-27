@@ -82,33 +82,51 @@ function add_filters(iterable $filters, $callback, $priority = 10, $args = 2)
 }
 
 /**
- * Remove single callback to multiple filters
+ * Remove single callback from multiple filters
  *
  * @param  iterable $filters  List of filters
  * @param  callable $callback
  * @param  integer  $priority
  * @return void
  */
-function remove_filters($filters, $callback, $priority = 10)
+function remove_filters(iterable $filters, $callback, $priority = 10)
 {
-    foreach ((array)$filters as $filter) {
-        remove_filter($filter, $callback, $priority);
-    }
+    $count = count($filters);
+    array_map(
+        '\remove_filter',
+        (array) $filters,
+        array_fill(0, $count, $callback),
+        array_fill(0, $count, $priority)
+    );
 }
 
 /**
  * Alias of add_filters
  *
  * @see add_filters
+ * @param  iterable $filters  List of filters
+ * @param  callable $callback
+ * @param  integer  $priority
+ * @return void
+ */
+function add_actions(iterable $actions, $callback, $priority = 10, $args = 2)
+{
+    add_filters($actions, $callback, $priority, $args);
+}
+
+/**
+ * Alias of remove_filters
+ *
+ * @see remove_filters
  * @param  iterable $actions  List of actions
  * @param  callable $callback
  * @param  integer  $priority
  * @param  integer  $args
  * @return void
  */
-function add_actions(iterable $actions, $callback, $priority = 10, $args = 2)
+function remove_actions(iterable $actions, $callback, $priority = 10)
 {
-    add_filters($actions, $callback, $priority, $args);
+    remove_filters($actions, $callback, $priority);
 }
 
 /**
