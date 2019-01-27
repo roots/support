@@ -107,6 +107,7 @@ function remove_filters(iterable $filters, $callback, $priority = 10)
  * @param  iterable $actions  List of actions
  * @param  callable $callback
  * @param  integer  $priority
+ * @param  integer  $args
  * @return void
  */
 function add_actions(iterable $actions, $callback, $priority = 10, $args = 2)
@@ -121,7 +122,6 @@ function add_actions(iterable $actions, $callback, $priority = 10, $args = 2)
  * @param  iterable $actions  List of actions
  * @param  callable $callback
  * @param  integer  $priority
- * @param  integer  $args
  * @return void
  */
 function remove_actions(iterable $actions, $callback, $priority = 10)
