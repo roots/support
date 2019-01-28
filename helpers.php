@@ -82,6 +82,25 @@ function add_filters(iterable $filters, $callback, $priority = 10, $args = 2)
 }
 
 /**
+ * Remove single callback from multiple filters
+ *
+ * @param  iterable $filters  List of filters
+ * @param  callable $callback
+ * @param  integer  $priority
+ * @return void
+ */
+function remove_filters(iterable $filters, $callback, $priority = 10)
+{
+    $count = count($filters);
+    array_map(
+        '\remove_filter',
+        (array) $filters,
+        array_fill(0, $count, $callback),
+        array_fill(0, $count, $priority)
+    );
+}
+
+/**
  * Alias of add_filters
  *
  * @see add_filters
@@ -94,6 +113,20 @@ function add_filters(iterable $filters, $callback, $priority = 10, $args = 2)
 function add_actions(iterable $actions, $callback, $priority = 10, $args = 2)
 {
     add_filters($actions, $callback, $priority, $args);
+}
+
+/**
+ * Alias of remove_filters
+ *
+ * @see remove_filters
+ * @param  iterable $actions  List of actions
+ * @param  callable $callback
+ * @param  integer  $priority
+ * @return void
+ */
+function remove_actions(iterable $actions, $callback, $priority = 10)
+{
+    remove_filters($actions, $callback, $priority);
 }
 
 /**
