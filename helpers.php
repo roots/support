@@ -57,7 +57,7 @@ function env($key, $default = null)
  */
 function value($value)
 {
-    return $value instanceof Closure ? $value() : $value;
+    return $value instanceof \Closure ? $value() : $value;
 }
 
 /**
