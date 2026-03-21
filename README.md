@@ -2,11 +2,9 @@
 
 General-purpose helper functions used across Roots WordPress projects.
 
-<p align="center">
-  <a href="https://packagist.org/packages/roots/support"><img alt="Packagist Downloads" src="https://img.shields.io/packagist/dt/roots/support?label=downloads&colorB=2b3072&colorA=525ddc&style=flat-square"></a>
+<a href="https://packagist.org/packages/roots/support"><img alt="Packagist Downloads" src="https://img.shields.io/packagist/dt/roots/support?label=downloads&colorB=2b3072&colorA=525ddc&style=flat-square"></a>
   <a href="https://twitter.com/rootswp"><img alt="Follow Roots" src="https://img.shields.io/badge/follow%20@rootswp-1da1f2?logo=twitter&logoColor=ffffff&message=&style=flat-square"></a>
   <a href="https://github.com/sponsors/roots"><img src="https://img.shields.io/badge/sponsor%20roots-525ddc?logo=github&style=flat-square&logoColor=ffffff&message=" alt="Sponsor Roots"></a>
-</p>
 
 ## Support us
 
